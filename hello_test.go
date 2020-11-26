@@ -1,10 +1,20 @@
 package hello
 
-import "testing"
+import (
+    v3 "github.com/ducknightii/hello_mod/v3"
+    "testing"
+)
 
 func TestHello(t *testing.T) {
     want := "Hello, world."
     if got := Hello(); got != want {
+        t.Errorf("Hello() = %q, want %q", got, want)
+    }
+}
+
+func TestHelloV3(t *testing.T) {
+    want := "Hello, world.v3"
+    if got := v3.Hello(); got != want {
         t.Errorf("Hello() = %q, want %q", got, want)
     }
 }
